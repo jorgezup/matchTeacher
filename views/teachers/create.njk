@@ -4,46 +4,44 @@
 
     <form class="card" method="POST" action="/teachers">
 
-        <section class="avatar" style="background: url(https://images.unsplash.com/photo-1544535830-9df3f56fff6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) no-repeat center / cover"></section>
+        <section 
+        class="avatar" 
+        style="background: url(http://fakeimg.pl/800x800?text=teacher&font=lobster) no-repeat center / cover">
+        
+        </section>
+        
+        
 
         <section class="details">
 
             <h3>Novo Professor</h3>
 
-                <div class="item">
+            <div class="item">
                 <div>Avatar URL</div>
                 <div>
-                    <input 
-                        type="url" 
-                        name="avatar_url"
-                        placeholder="https://"
-                    >
+                    <input type="url" name="avatar_url" placeholder="https://">
                 </div>
             </div>
 
             <div class="item">
-                <div>Nome Completo</div>
+                <div>Nome</div>
                 <div>
-                    <input 
-                        type="text" 
-                        name="name"
-                        placeholder="Nome completo"
-                    >
+                    <input type="text" name="name" placeholder="Nome completo">
                 </div>
             </div>
 
             <div class="item">
                 <div>Data de Nascimento</div>
                 <div>
-                <input type="date" name="birth">
+                    <input type="date" name="birth">
                 </div>
             </div>
 
             <div class="item">
                 <div>Sexo</div>
                 <div>
-                <span><input type="radio" name="gender" value="M" checked>Masculino</span>
-                <span><input type="radio" name="gender" value="F">Feminino</span>
+                    <span><input type="radio" name="gender" value="M" checked="checked">Masculino</span>
+                    <span><input type="radio" name="gender" value="F">Feminino</span>
                 </div>
             </div>
 
@@ -54,25 +52,19 @@
                 </div>
             </div>
 
-                        <div class="item">
+            <div class="item">
                 <div>Tipo de Aula</div>
                 <div>
                     <input type="text" name="class" placeholder="Presencial ou Á distância">
                 </div>
             </div>
 
-                        <div class="item">
+            <div class="item">
                 <div>Acompanhamento</div>
                 <div>
                     <input type="text" name="services" placeholder="Ex.: Química e Física">
                 </div>
             </div>
-
-            <div class="item">
-            <div>Desde</div>
-            <div><input type="date" name="date-registered"></div>
-            </div>
-
 
             <button type="submit">Salvar</button>
         </section>
