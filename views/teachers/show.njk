@@ -6,7 +6,7 @@
 
         <section 
         class="avatar" 
-        style="background: url('https://source.unsplash.com/collection/2226379/800x800') no-repeat center center / cover">
+        style="background: url({{teacher.avatar_url}}) no-repeat center center / cover">
         
         </section>
 
@@ -16,40 +16,41 @@
 
         <div class="item">
             <div>Professor</div>
-            <div>Jorge Augusto</div>
+            <div>{{teacher.name}}</div>
         </div>
 
         <div class="item">
             <div>Idade</div>
-            <div>28</div>
+            <div>{{teacher.age}}</div>
         </div>
 
         <div class="item">
             <div>Sexo</div>
-            <div>Masculino</div>
+            <div>{{ "Masculino" if teacher.gender == 'M' else "Feminino"}}</div>
         </div>
 
         <div class="item">
             <div>Grau de Escolaridade</div>
-            <div>Pós-Graduação</div>
+            <div>{{teacher.escolaridade}}</div>
         </div>
 
         <div class="item">
             <div>Tipo de Aula</div>
-            <div>À distância</div>
+            <div>{{teacher.tipo_aula}}</div>
         </div>
 
         <div class="item">
             <div>Acompanhamento</div>
             <div>
-            <span>Informática</span>
-            <span>Redes de Computadores</span>
+            {% for service in teacher.services %}
+                <span>{{service}}</span>
+            {% endfor %}
             </div>
         </div>
 
         <div class="item">
             <div>Desde</div>
-            <div>20/02/2020</div>
+            <div>{{teacher.created_at}}</div>
         </div>
         </section>
 
