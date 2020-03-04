@@ -1,5 +1,7 @@
 const fs = require('fs')
 const data = require('./data.json')
+const { age } = require('./utils')
+const { date } = require('./utils')
 
 //show
 exports.show = function(req, res) {
@@ -13,9 +15,9 @@ exports.show = function(req, res) {
 
     const teacher = {
         ...foundTeacher,
-        age: "",
+        age: age(foundTeacher.birth),
         services: foundTeacher.services.split(','),
-        created_at: "",
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at),
     }
 
     return res.render('teachers/show', { teacher })
@@ -66,8 +68,28 @@ exports.post = function(req, res) {
 }
 
 
-// update
+// edit
+exports.edit = function(req, res) {
+    const { id } = req.params
 
+    const foundTeacher = data.teachers.find(function(teacher){
+        return teacher.id == id
+    })
+
+    if (!foundTeacher) return res.send("teacher not found")
+
+    const teachers = {
+        ...foundTeacher,
+        birth: date(foundTeacher.birth)
+    }
+
+    return res.render('teachers/edit', { teachers })
+}
+
+//put
+exports.put = function(req, res) {
+    
+}
 
 
 // delete
