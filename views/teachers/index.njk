@@ -2,56 +2,29 @@
 
 {% block content %}
 
-    <div class="card">
+    <div class="card table-container">
+        <a class="create" href="/teachers/create">Novo Professor</a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Professor</th>
+                    <th>Aula</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for teacher in teachers%}
+                    <tr>
+                        <td>
+                        <span style="background-image: url({{teacher.avatar_url}}"></span>
+                        {{teacher.name}}</td>
+                        <td>{{teacher.services}}</td>
+                        <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-        <section 
-        class="avatar" 
-        style="background: url('https://source.unsplash.com/collection/2226379/800x800') no-repeat center center / cover">
-        
-        </section>
-
-        <section class="details">
-        
-        <h3>Detalhes</h3>
-
-        <div class="item">
-            <div>Professor</div>
-            <div>Jorge Augusto</div>
-        </div>
-
-        <div class="item">
-            <div>Idade</div>
-            <div>28</div>
-        </div>
-
-        <div class="item">
-            <div>Sexo</div>
-            <div>Masculino</div>
-        </div>
-
-        <div class="item">
-            <div>Grau de Escolaridade</div>
-            <div>Pós-Graduação</div>
-        </div>
-
-        <div class="item">
-            <div>Tipo de Aula</div>
-            <div>À distância</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-            <span>Informática</span>
-            <span>Redes de Computadores</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Desde</div>
-            <div>20/02/2020</div>
-        </div>
-        </section>
 
     </div>
 

@@ -3,6 +3,11 @@ const data = require('./data.json')
 const { age } = require('./utils')
 const { date } = require('./utils')
 
+//index
+exports.index = function(req, res) {
+    return res.render('teachers/index', { teachers:data.teachers}) //data.teachers, pq tem um array dentro data.json
+}
+
 //show
 exports.show = function(req, res) {
     const { id } = req.params
@@ -22,7 +27,6 @@ exports.show = function(req, res) {
 
     return res.render('teachers/show', { teacher })
 }
-
 // create
 exports.post = function(req, res) {
     
@@ -66,8 +70,6 @@ exports.post = function(req, res) {
         return res.redirect('/teachers')
     })
 }
-
-
 // edit
 exports.edit = function(req, res) {
     const { id } = req.params
@@ -85,11 +87,49 @@ exports.edit = function(req, res) {
 
     return res.render('teachers/edit', { teachers })
 }
-
 //put
 exports.put = function(req, res) {
-    
+    const { id } = req.body //dentro do req.body, é feito a desestruturação e é pegado o id
+
+    let index = 0
+
+    const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    }) 
+
+    if (!foundTeacher) return res.send("Professor não encontrado")
+
+    const teacher = {
+        ...foundTeacher, //espalhando os dados
+        ...req.body,
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id) /* para salvar o id como número e não como string */
+    }
+
+    data.teachers[index] = teacher
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send("Write error!")
+
+        return res.redirect(`/teachers/${id}`)
+    })
 }
-
-
 // delete
+exports.delete = function(req, res) {
+    const { id } = req.body
+    
+    const filteredTeachers = data.teachers.filter((teacher) => {
+        return teacher.id !=  id
+    })
+
+    data.teachers =filteredTeachers
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send("Write error!")
+
+        return res.redirect(`/teachers`)
+    })
+}
