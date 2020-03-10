@@ -1,4 +1,14 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "HTTP://GOOGLE.COM",
+      "name": "JORGE",
+      "birth": 683251200000,
+      "gender": "M",
+      "created_at": 1583802724140
+    }
+  ],
   "teachers": [
     {
       "id": 1,

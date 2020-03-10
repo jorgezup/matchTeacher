@@ -1,7 +1,7 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age } = require('./utils')
-const { date } = require('./utils')
+const data = require('../data.json')
+const { age } = require('../utils')
+const { date } = require('../utils')
 
 //index
 exports.index = function(req, res) {
@@ -27,7 +27,13 @@ exports.show = function(req, res) {
 
     return res.render('teachers/show', { teacher })
 }
-// create
+
+//create
+exports.create = function(req, res) {
+    return res.render('teachers/create')
+}
+
+// post
 exports.post = function(req, res) {
     
     const keys = Object.keys(req.body)
@@ -87,6 +93,7 @@ exports.edit = function(req, res) {
 
     return res.render('teachers/edit', { teachers })
 }
+
 //put
 exports.put = function(req, res) {
     const { id } = req.body //dentro do req.body, é feito a desestruturação e é pegado o id
@@ -117,6 +124,7 @@ exports.put = function(req, res) {
         return res.redirect(`/teachers/${id}`)
     })
 }
+
 // delete
 exports.delete = function(req, res) {
     const { id } = req.body

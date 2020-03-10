@@ -1,0 +1,68 @@
+ <div class="item">
+                <div>Avatar URL</div>
+                <div>
+                    <input type="url" name="avatar_url" placeholder="https://" value="{{student.avatar_url}}">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>
+                    <input type="text" name="name" value="{{student.name}}">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>
+                    <input type="email" name="email" value="{{student.email}}">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <div>
+                    <input type="date" name="birth" value="{{student.birth}}">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>
+                    <span><input type="radio" name="gender" value="M" {% if student.gender == "M" %} checked {% endif %}} >Masculino</span>
+                    <span><input type="radio" name="gender" value="F" {% if student.gender == "F" %} checked {% endif %}}>Feminino</span>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div>Tipo Sanguíneo</div>
+                <div>
+                    <select name="sangue">
+                        <option value="A+" {% if student.sangue == "A+" %} selected {%endif%}>A+</option>
+                        <option value="A-" {% if student.sangue == "A-" %} selected {%endif%}>A-</option>
+                        <option value="B+" {% if student.sangue == "B+" %} selected {%endif%}>B+</option>
+                        <option value="B-" {% if student.sangue == "B-" %} selected {%endif%}>B-</option>
+                        <option value="AB+" {% if student.sangue == "AB+" %} selected {%endif%}>AB+</option>
+                        <option value="AB-" {% if student.sangue == "AB-" %} selected {%endif%}>AB-</option>
+                        <option value="O-" {% if student.sangue == "O+" %} selected {%endif%}>O-</option>
+                        <option value="O+" {% if student.sangue == "O-" %} selected {%endif%}>O+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Peso em Kg</div>
+                <div>
+                    <input type="number" name="weigth" value="{{student.weight}}">
+                </div>
+            </div>
+
+                   <div class="item">
+                <div>Altura em cm</div>
+                <div>
+                    <input type="number" name="heigth" value="{{student.height}}">
+                </div>
+            </div>
+
+            <button type="submit">Salvar</button>

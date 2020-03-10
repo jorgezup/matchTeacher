@@ -254,7 +254,8 @@ td:last-child {
     text-align: center;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container > a {
     background-color: var(--primary-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -264,17 +265,9 @@ tbody tr td:last-child a {
     border-radius: 4px;
 }
 
-.table-container {
-    position: relative;
+.table-container > a {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
-.table-container  .create {
-    text-decoration: none;
-    padding: 4px 8px;
-    background-color: cornflowerblue;
-    color: white;
-    border-radius: 4px;
-    position: absolute;
-    top: 8px;
-    right: 46px;
-}
+
