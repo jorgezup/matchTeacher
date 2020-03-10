@@ -4,57 +4,49 @@
 
     <div class="card">
 
-        <section 
-        class="avatar" 
-        style="background: url({{teacher.avatar_url}}) no-repeat center center / cover">
-        
-        </section>
+        <section class="avatar" style="background: url({{student.avatar_url}}) no-repeat center center / cover"></section>
 
         <section class="details">
-        
-        <h3>Detalhes</h3>
 
-        <div class="item">
-            <div>Professor</div>
-            <div>{{teacher.name}}</div>
-        </div>
+            <h3>Detalhes</h3>
 
-        <div class="item">
-            <div>Idade</div>
-            <div>{{teacher.age}}</div>
-        </div>
-
-        <div class="item">
-            <div>Sexo</div>
-            <div>{{ "Masculino" if teacher.gender == 'M' else "Feminino"}}</div>
-        </div>
-
-        <div class="item">
-            <div>Grau de Escolaridade</div>
-            <div>{{teacher.escolaridade}}</div>
-        </div>
-
-        <div class="item">
-            <div>Tipo de Aula</div>
-            <div>{{teacher.tipo_aula}}</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-            {% for service in teacher.services %}
-                <span>{{service}}</span>
-            {% endfor %}
+            <div class="item">
+                <div>Aluno</div>
+                <div>{{student.name}}</div>
             </div>
-        </div>
 
-        <div class="item">
-            <div>Desde</div>
-            <div>{{teacher.created_at}}</div>
-        </div>
-        <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+            <div class="item">
+                <div>Email</div>
+                <div>{{student.email}}</div>
+            </div>
+
+            <div class="item">
+                <div>Aniversário</div>
+                <div>{{student.birth}}</div>
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{ "Masculino" if student.gender == 'M' else "Feminino"}}</div>
+            </div>
+
+            <div class="item">
+                <div>Tipo Sanguíneo</div>
+                <div>{{student.blood}}</div>
+            </div>
+
+            <div class="item">
+                <div>Peso (kg)</div>
+                <div>{{student.weight}}</div>
+            </div>
+
+            <div class="item">
+                <div>Altura (cm)</div>
+                <div>{{student.height}}</div>
+            </div>
+
+            <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
         </section>
-
 
     </div>
 

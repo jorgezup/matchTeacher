@@ -2,46 +2,26 @@
   "students": [
     {
       "id": 1,
-      "avatar_url": "HTTP://GOOGLE.COM",
-      "name": "JORGE",
+      "avatar_url": "https://images.unsplash.com/photo-1521409217597-47a006faacd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Jorge",
       "birth": 683251200000,
       "gender": "M",
-      "created_at": 1583802724140
-    }
-  ],
-  "teachers": [
-    {
-      "id": 1,
-      "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "name": "Fulano",
-      "birth": 991267200000,
-      "gender": "M",
-      "escolaridade": "Doutorado",
-      "tipo_aula": "A distância",
-      "services": "Biologia",
-      "created_at": 1583712229998
+      "email": "jorgebertolo@gmail.com",
+      "blood": "AB-",
+      "weight": "83",
+      "height": "177"
     },
     {
       "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1534525445734-77ee55452950?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-      "name": "Marco",
-      "birth": 900460800000,
-      "gender": "M",
-      "escolaridade": "Mestrado",
-      "tipo_aula": "Presencial",
-      "services": "Matemática",
-      "created_at": 1583712269417
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-      "name": "Joaquina",
-      "birth": 496540800000,
+      "avatar_url": "https://images.unsplash.com/photo-1550433881-80f866a15eae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Eiva",
+      "birth": 639619200000,
       "gender": "F",
-      "escolaridade": "Graduação",
-      "tipo_aula": "Presencial",
-      "services": "Português",
-      "created_at": 1583712320669
+      "email": "eivatiago@hotmail.com",
+      "blood": "B+",
+      "weight": "51",
+      "height": "156"
     }
-  ]
+  ],
+  "teachers": []
 }

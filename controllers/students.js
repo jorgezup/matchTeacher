@@ -13,23 +13,6 @@ exports.create = function(req, res) {
     return res.render('students/create')
 }
 
-//show
-exports.show = function(req, res) {
-    const { id } = req.params
-
-    const foundStudent = data.students.find(function(student){
-        return student.id == id
-    })
-
-    if (!foundStudent) return res.send("student not found")
-
-    const student = {
-        ...foundStudent,
-        age: age(foundStudent.birth),
-    }
-
-    return res.render('students/show', { student })
-}
 // post
 exports.post = function(req, res) {
     
@@ -43,11 +26,12 @@ exports.post = function(req, res) {
     let {
         name,
         birth,
-        services,
         gender,
-        escolaridade,
-        tipo_aula,
+        email,
+        blood,
         avatar_url,
+        weight,
+        height,
       } = req.body
     
       birth = Date.parse(birth)
@@ -59,10 +43,10 @@ exports.post = function(req, res) {
         name,
         birth,
         gender,
-        escolaridade,
-        tipo_aula,
-        services,
-        created_at,
+        email,
+        blood,
+        weight,
+        height,
       })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), (err) => {
@@ -73,6 +57,25 @@ exports.post = function(req, res) {
         return res.redirect('/students')
     })
 }
+
+//show
+exports.show = function(req, res) {
+    const { id } = req.params
+
+    const foundStudent = data.students.find(function(student){
+        return student.id == id
+    })
+
+    if (!foundStudent) return res.send("student not found")
+
+    const student = {
+        ...foundStudent,
+        birth: date(foundStudent.birth).birthDay,
+    }
+
+    return res.render('students/show', { student })
+}
+
 // edit
 exports.edit = function(req, res) {
     const { id } = req.params
@@ -83,12 +86,12 @@ exports.edit = function(req, res) {
 
     if (!foundStudent) return res.send("student not found")
 
-    const students = {
+    const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth)
+        birth: date(foundStudent.birth).iso
     }
 
-    return res.render('students/edit', { students })
+    return res.render('students/edit', { student })
 }
 //put
 exports.put = function(req, res) {

@@ -38,15 +38,15 @@
             <div class="item">
                 <div>Tipo Sanguíneo</div>
                 <div>
-                    <select name="sangue">
-                        <option value="A+" {% if student.sangue == "A+" %} selected {%endif%}>A+</option>
-                        <option value="A-" {% if student.sangue == "A-" %} selected {%endif%}>A-</option>
-                        <option value="B+" {% if student.sangue == "B+" %} selected {%endif%}>B+</option>
-                        <option value="B-" {% if student.sangue == "B-" %} selected {%endif%}>B-</option>
-                        <option value="AB+" {% if student.sangue == "AB+" %} selected {%endif%}>AB+</option>
-                        <option value="AB-" {% if student.sangue == "AB-" %} selected {%endif%}>AB-</option>
-                        <option value="O-" {% if student.sangue == "O+" %} selected {%endif%}>O-</option>
-                        <option value="O+" {% if student.sangue == "O-" %} selected {%endif%}>O+</option>
+                    <select name="blood">
+                        <option value="A+" {% if student.blood == "A+" %} selected {%endif%}>A+</option>
+                        <option value="A-" {% if student.blood == "A-" %} selected {%endif%}>A-</option>
+                        <option value="B+" {% if student.blood == "B+" %} selected {%endif%}>B+</option>
+                        <option value="B-" {% if student.blood == "B-" %} selected {%endif%}>B-</option>
+                        <option value="AB+" {% if student.blood == "AB+" %} selected {%endif%}>AB+</option>
+                        <option value="AB-" {% if student.blood == "AB-" %} selected {%endif%}>AB-</option>
+                        <option value="O-" {% if student.blood == "O+" %} selected {%endif%}>O+</option>
+                        <option value="O+" {% if student.blood == "O-" %} selected {%endif%}>O-</option>
                     </select>
                 </div>
             </div>
@@ -54,14 +54,14 @@
             <div class="item">
                 <div>Peso em Kg</div>
                 <div>
-                    <input type="number" name="weigth" value="{{student.weight}}">
+                    <input type="number" name="weight" value="{{student.weight}}">
                 </div>
             </div>
 
                    <div class="item">
                 <div>Altura em cm</div>
                 <div>
-                    <input type="number" name="heigth" value="{{student.height}}">
+                    <input type="number" name="height" value="{{student.height}}">
                 </div>
             </div>
 
