@@ -1,0 +1,53 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{teacher.avatar_url}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input type="text" name="name" placeholder="Nome completo" value="{{teacher.name}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <div>
+        <input type="date" name="birth" value="{{teacher.birth}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Sexo</div>
+    <div>
+        <span><input type="radio" name="gender" value="M" {% if teacher.gender == "M" %} checked
+                {% endif %}}>Masculino</span>
+        <span><input type="radio" name="gender" value="F" {% if teacher.gender == "F" %} checked
+                {% endif %}}>Feminino</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Grau de Escolaridade</div>
+    <div>
+        <input type="text" name="escolaridade" placeholder="Ex.: Mestrado" value="{{teacher.escolaridade}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Tipo de Aula</div>
+    <div>
+        <input type="text" name="tipo_aula" placeholder="Presencial ou Á distância" value="{{teacher.tipo_aula}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Acompanhamento</div>
+    <div>
+        <input type="text" name="services" placeholder="Ex.: Química e Física" value="{{teacher.services}}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

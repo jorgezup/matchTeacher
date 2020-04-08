@@ -1,0 +1,10 @@
+    <script>
+    
+        const input = document.querySelector('input');
+        const image = document.querySelector('.avatar')
+
+        input.addEventListener('change', (event) => {
+            image.style.backgroundImage = `url("${event.target.value}")`
+        })
+
+    </script>

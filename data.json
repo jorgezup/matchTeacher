@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1521409217597-47a006faacd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Jorge",
+      "birth": 683251200000,
+      "gender": "M",
+      "email": "jorgebertolo@gmail.com",
+      "blood": "AB-",
+      "weight": "83",
+      "height": "177"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1550433881-80f866a15eae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Eiva",
+      "birth": 639619200000,
+      "gender": "F",
+      "email": "eivatiago@hotmail.com",
+      "blood": "B+",
+      "weight": "51",
+      "height": "156"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://image.freepik.com/free-vector/business-people-organization-office-freelance-job-character_40876-1291.jpg",
+      "name": "Imagem",
+      "birth": 1007769600000,
+      "gender": "M",
+      "escolaridade": "Mestrado",
+      "tipo_aula": "Presencial",
+      "services": "Química",
+      "created_at": 1586029578504
+    }
+  ]
+}

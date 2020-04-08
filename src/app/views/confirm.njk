@@ -1,0 +1,14 @@
+<script>
+
+/* Verifica se está na página edit */
+/* fica monitorando o evento submit do form delete */
+const currentPage = location.pathname
+if (currentPage.includes("edit")){
+    const deleteBtn = document.querySelector("#form-delete")
+    deleteBtn.addEventListener('submit', (event) => {
+        if (!confirm("Deseja deletar?"))
+            event.preventDefault()
+    })
+}
+
+</script>
