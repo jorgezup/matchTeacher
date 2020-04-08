@@ -6,17 +6,28 @@ module.exports = {
     //index
     index(req, res) {
 
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if (filter) {
-            Teacher.findBy(filter, function(teachers) {
-                return res.render('teachers/index', { teachers, filter }) 
-            })
-        } else {
-            Teacher.all(function(teachers) {
-                return res.render('teachers/index', { teachers }) 
-            })
+        page = page || 1
+        limit = limit || 2 /* quantos registros devem aparecer por página */
+        let offset = limit * (page -1) /* é o pulo, de quanto em quanto */
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
+                const pagination = {
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                }
+                return res.render('teachers/index', { teachers,  pagination, filter}) 
+            }
         }
+
+        Teacher.paginate(params)
+
     },
     //create
     create(req, res) {        
